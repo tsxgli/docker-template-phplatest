@@ -14,9 +14,7 @@ services:
             dockerfile: PHP.Dockerfile
         volumes:
             - ./app:/app
-    mysql:
-        image: mariadb:latest
-        environment:
+    mysql:        environment:
             MYSQL_ROOT_PASSWORD: 'secret123'
             MYSQL_USER: 'developer'
             MYSQL_PASSWORD: 'secret123'
