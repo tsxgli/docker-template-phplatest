@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="stylsheet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
+
 <body>
     <h1> Write something in our guestbook!</h1>
 
@@ -60,15 +65,9 @@ echo $e->getMessage();
  
 //DISPLAY MESSAGES
 echo "<h1>$db_name</h1>";
-foreach($result as $row){
-    $id = $row["id"];
-    $emailAddress = $row["email"];
-    $postedAt = $row["posted_at"];
-    $message = $row["message"];
-    $fullName = $row["name"];
 
 echo '
-<table>
+<table class="table">
 <tr>
   <th>ID</th>
   <th>Name</th>
@@ -76,18 +75,35 @@ echo '
   <th>Date posted</th>
   <th>Edit or Delete</th>
   <tr> 
-<td>'.$id.'</td> 
-<td>'.$fullName.'</td> 
-<td>'.$message.'</td> 
-<td>'.$postedAt.'</td> 
-<td> <input type="submit" name="btnDelete" value="Delete"/></td> 
-<td> <input type="submit" name="btnEdit" value="Edit"/></td> 
-</tr>';
+  ';
+
+foreach($result as $row){
+    $id = $row["id"];
+    $emailAddress = $row["email"];
+    $postedAt = $row["posted_at"];
+    $message = $row["message"];
+    $fullName = $row["name"];
+
+echo "
+<td>$id</td> 
+<td>$fullName</td> 
+<td>$message</td> 
+<td>$postedAt</td> 
+<td> 
+<a class='btn btn-primary' href='edit.php?id=$row[id]'>Edit</a>
+<a class='btn btn-danger' href='delete.php?id=$row[id]'>Delete</a>
+</td> 
+<td>
+
+</td>
+</tr>
+";
 }
 
-
-
 ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
