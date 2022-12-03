@@ -1,7 +1,11 @@
-div{
+p* {
     background-color: aqua;
     border:3px;
     border-style:solid;
     margin:50px;
     padding:10px;
+} */
+.container{
+    flex-direction: column;
+    padding: 16px;
 }
