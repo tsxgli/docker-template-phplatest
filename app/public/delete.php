@@ -13,7 +13,6 @@ echo $e->getMessage();
 $statement= "Delete from Posts where id=:id";
 $statement = $connection->prepare("Delete from Posts where id=:id");
 $statement->bindParam(':id',$id);
-
 $statement->execute();
 
 header("location:management.php");

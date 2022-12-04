@@ -33,8 +33,6 @@ echo $e->getMessage();
 // FORM 1
  
 
-
-
 //GET THE DATA FROM THE INPUT FIELDS
     if(isset($_POST['Send']))
     {

@@ -45,8 +45,6 @@ if (isset($_POST['username'])&& isset($_POST['password']))
 
             <br> <label for="password"><b>Password</b></label><br>
             <input type="password" placeholder="Enter Password" name="password" required><br>
-
-
             <button type="submit">Login</button>
 
         </div>
