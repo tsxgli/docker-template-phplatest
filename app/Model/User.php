@@ -6,8 +6,9 @@ class User{
     public string $postCode;
     public string $address;
     public int $age;
-    public $username;
+    public string $email;
     public int $password;
+
 }
 
 
